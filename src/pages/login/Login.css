@@ -10,16 +10,15 @@
 .loginWrapper{
     width: 70%;
     height: 70%;
-    /* background-color: green; */
     display: flex;
 }
 
-.loginLeft,
-.loginRight{
+.loginImg{
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .loginLogo{
@@ -31,10 +30,12 @@
 
 .loginDesc{
     font-size: 24px;
+    margin-bottom: 60px;
 }
 
 .loginBox{
     height: 400px;
+    width: 400px;
     padding: 20px;
     border-radius: 10px;
     display: flex;
