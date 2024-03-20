@@ -1,34 +1,66 @@
 import { Chat, Notifications, Search } from '@mui/icons-material'
-import React from 'react'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import React, { useState } from 'react'
 import "./Topbar.css"
+import Select from 'react-select';
+import { render } from '@testing-library/react';
+// import { Opponents } from '../../dummyData'
 
-export default function Topbar() {
+export default function Topbar({opponent, setOpponent}) {
+
+    const option =[
+        {value: 1, label: "第1セット"},
+        {value: 2, label: "第2セット"},
+        {value: 3, label: "第3セット"},
+        {value: 4, label: "第4セット"},
+        {value: 5, label: "第5セット"},
+        {value: 6, label: "第6セット"},
+    ]
+
+    const handleOpponentChange = (selectedOption) => {
+        setOpponent(selectedOption.value)
+    }
+    console.log(opponent)
+
   return (
-    <div className='topbaraContainer'>
+    <div className='topbarContainer'>
         <div className='topbarLeft'>
-            <span className='logo'>Real SNS</span>
+            <div className="back">
+                <ArrowBackIcon className='backIcon'/>
+                <span className="iconName">前ページ</span>
+            </div>
         </div>
+
         <div className='topbarCenter'>
+            <div className="sheetName">
+                <span className='logo'>スコアシート</span>
+            </div>
+            <div className="setCount">
+                <Select 
+                    name="set" 
+                    options={option}
+                    defaultValue={null}
+                    placeholder="セット選択"
+                />
+            </div>
+            <span className='vs'>VS</span>
             <div className='searchbar'>
                 <Search className='searchIcon'/>
-                <input 
-                    type='text' 
-                    className='searchInput' 
-                    placeholder='探し物は何ですか？'
+                <Select
+                    className="searchInput" 
+                    options={opponent}
+                    onChange={handleOpponentChange}
+                    placeholder="対戦相手選択"
                 />
             </div>
         </div>
+
         <div className='topbarRight'>
-            <div className="topbarItemIcons">
-            <div className='topbarIconItem'>
-                <Chat />
-                <span className='topbarIconBadge'>1</span>
-            </div>
-            <div className='topbarIconItem'>
-                <Notifications />
-                <span className='topbarIconBadge'>2</span>
-            </div>
-            <img src='/assets/person/1.jpeg' alt='' className='topbarImg'/>
+            {/* <div className='topbarIconItem'> */}
+            <div className='forward'>
+                <span className='iconName'>次ページ</span>
+                <ArrowForwardIcon />
             </div>
         </div>
     </div>

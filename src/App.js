@@ -1,10 +1,17 @@
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
-import Profile from "./pages/profile/Profile";
-import Register from "./pages/register/Register";
+import Register from "./pages/register/RegisterPlayer";
+import "./App.css"
+import Match from "./pages/match/Match";
 
 function App() {
-  return <Login />
+  return (
+  <>
+      {/* <Login /> */}
+      {/* <Home /> */}
+      <Match />
+  </>
+  )
 }
 
 export default App;

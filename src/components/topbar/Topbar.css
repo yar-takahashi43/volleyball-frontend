@@ -1,36 +1,80 @@
-.topbaraContainer{
+.topbarContainer{
     background-color: #2c517c;
     height: 50px;
     width: 100%;
     display: flex;
     align-items: center;
-    position: sticky;
     top: 0;
+    position: sticky;
     z-index: 100;
 }
 
-.topbarLeft{
-    flex: 3;
+.searchIcon,
+.back,
+.forward{
+    display: flex;
+}
+
+.topbarLeft,
+.topbarRight{
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    cursor: pointer;
+    /* 以下menubarListの中身がホバーされたら凹む設定 */
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.topbarLeft:hover,
+.topbarRight:hover{
+    box-shadow: none;
+    transform: translateY(5px);
+}
+
+.topbarCenter{
+    flex: 10;
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+}
+
+.sheetName{
+    width: 30%;
 }
 
 .logo{
     font-size: 24px;
     color: white;
     font-weight: bold;
-    margin-left: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
-.topbarCenter{
-    flex: 5;
+.setCount{
+    width: 25%;
+    margin-left: 5%;
+    margin-right: 5%;
+    align-items: center;
+}
+
+.vs{
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 .searchbar{
-    width: 100%;
-    height: 30px;
+    width: 30%;
     background-color: white;
     border-radius: 25px;
     display: flex;
     align-items: center;
+    flex-direction: row;
 }
 
 .searchIcon{
@@ -41,49 +85,9 @@
 
 .searchInput{
     border: none;
-    width: 80%;
+    width: 90%;
 }
 
 .searchInput:focus{
     outline: none;
-}
-
-.topbarRight{
-    flex: 4;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    color: white;
-}
-
-.topbarItemIcons{
-    display: flex;
-}
-
-.topbarIconItem{
-    margin-right: 15px;
-    cursor: pointer;
-    position: relative;
-    margin-top: 5px;
-}
-
-.topbarIconBadge{
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: #db6ab9;
-    width: 15px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-}
-
-.topbarImg{
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    cursor: pointer;
-    object-fit: cover;
 }

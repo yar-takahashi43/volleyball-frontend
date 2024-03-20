@@ -1,51 +1,38 @@
-import { Bookmark, Home, MessageRounded, Notifications, Person, Search, Settings } from '@mui/icons-material'
-import React from 'react'
+import React, { useState } from 'react'
 import "./Sidebar.css"
-import {Users} from "../../dummyData"
-import Friend from '../friend/Friend'
+import {Players, Users} from "../../dummyData"
+import Spike from "../evaluation/Spike"
+import Reception from "../evaluation/Reception"
+import Member from '../member/Member'
 
-export default function Sidebar() {
+
+export default function Sidebar({match}) {
+
+    // レセプションのカウント
+    const [addReception, setAddReception] = useState(match.reception.receptionNum)
+    const [minusReception, setMinusReception] = useState(match.reception.receptionNum)
+
+    // スパイクのカウント
+    const [addSpike, setAddSpike] = useState(match.spike.spikeScore)
+    const [minusSpike, setMinusSpike] = useState(match.spike.spikeScore)
+
   return (
-    <div className='sidebar'>
-        <div className="sidebarWrapper">
-            <ul className="sidebarList">
-                <li className="sidebarListItem">
-                    <Home className='sidebarIcon'/>
-                    <span className="sidebarListItemText">ホーム</span>
-                </li>
-                <li className="sidebarListItem">
-                    <Search className='sidebarIcon'/>
-                    <span className="sidebarListItemText">検索</span>
-                </li>
-                <li className="sidebarListItem">
-                    <Notifications className='sidebarIcon'/>
-                    <span className="sidebarListItemText">通知</span>
-                </li>
-                <li className="sidebarListItem">
-                    <MessageRounded className='sidebarIcon'/>
-                    <span className="sidebarListItemText">メッセージ</span>
-                </li>
-                <li className="sidebarListItem">
-                    <Bookmark className='sidebarIcon'/>
-                    <span className="sidebarListItemText">ブックマーク</span>
-                </li>
-                <li className="sidebarListItem">
-                    <Person className='sidebarIcon'/>
-                    <span className="sidebarListItemText">プロフィール</span>
-                </li>
-                <li className="sidebarListItem">
-                    <Settings className='sidebarIcon'/>
-                    <span className="sidebarListItemText">設定</span>
-                </li>
-            </ul>
-            {/** 横線を入れる */}
-            <hr className="sidebarHr" />
-            <ul className="sidebarFriendList">
-                {Users.map((user) => (
-                    <Friend user={user} key={user.id}/>
-                ))}
-            </ul>
-        </div>
+    <div className='Sidebar'>
+        <Member member={match}/>
+        <Reception 
+            reception={match.reception}
+            addReception={addReception}
+            setAddReception={setAddReception}
+            minusReception={minusReception}
+            setMinusReception={setMinusReception}
+        />
+        <Spike 
+            spike={match.spike}
+            addSpike={addSpike}
+            setAddSpike={setAddSpike}
+            minusSpike={minusSpike}
+            setMinusSpike={setMinusSpike}
+        />
     </div>
   )
 }
