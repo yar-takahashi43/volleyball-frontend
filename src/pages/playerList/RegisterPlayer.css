@@ -4,14 +4,6 @@
     height: 100vh;
 }
 
-.registerTitle{
-    margin: 80px 0 10px 50px;
-}
-
-.barHr1{
-    margin-top: 0px;
-}
-
 /* marginは要検討 */
 .registerBox{
     /* margin: 20% 30%; */
@@ -81,8 +73,4 @@
     cursor: pointer;
     margin-bottom: 10px;
     margin-top: 15px;
-}
-
-.barHr2{
-    margin-top: 100px;
 }

@@ -21,7 +21,7 @@ export default function Score({match, setMatch}) {
   return (
     <>
         <Topbar opponent={opponent} key={opponent.id} setOpponent={setOpponent} />
-        <div className="scoreContainer">
+        {/* <div className="scoreContainer">
             <Sidebar 
                 match={matchData}
                 key={matchId.id} 
@@ -31,7 +31,7 @@ export default function Score({match, setMatch}) {
                 matchData={matchData}
                 key={matchId.id}
             />
-        </div>
+        </div> */}
     </>
   )
 }

@@ -8,7 +8,10 @@ import RegisterOpponent from '../opponent/RegisterOpponent.jsx'
 import OpponentList from '../opponent/OpponentList.jsx'
 // import Opponent from '../opponent/Opponent.jsx'
 import { Opponents } from '../../dummyData'
-import Register from '../register/RegisterPlayer.jsx'
+import Register from '../playerList/RegisterPlayer.jsx'
+import OpponentDetails from '../opponent/OpponentDetails.jsx'
+import PlayerDetails from '../playerList/PlayerDetails.jsx'
+import MatchList from '../match/MatchList.jsx'
 
 export default function Home() {
 
@@ -20,9 +23,12 @@ export default function Home() {
         <div className="homeContainer">
             {/* <Menu /> */}
             {/* <PlayerList /> */}
-            <Register />
+            {/* <PlayerDetails /> */}
+            {/* <Register /> */}
             {/* <RegisterOpponent/> */}
             {/* <OpponentList/> */}
+            {/* <OpponentDetails /> */}
+            <MatchList />
         </div>
     </>
   )

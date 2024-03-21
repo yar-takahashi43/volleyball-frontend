@@ -27,6 +27,7 @@ export const Players = [
   nickname: "澤村",
   spike: [],
   score: [],
+  serve: [],
 },
 {
   id: 2,
@@ -35,6 +36,7 @@ export const Players = [
   nickname: "旭",
   spike: [],
   score: [],
+  serve: [],
 },
 {
   id: 3,
@@ -43,6 +45,7 @@ export const Players = [
   nickname: "田中",
   spike: [],
   score: [],
+  serve: [],
 },
 {
   id: 4,
@@ -51,6 +54,7 @@ export const Players = [
   nickname: "影山",
   spike: [],
   score: [],
+  serve: [],
 },
 {
   id: 5,
@@ -59,6 +63,7 @@ export const Players = [
   nickname: "日向",
   spike: [],
   score: [],
+  serve: [],
 },
 {
   id: 6,
@@ -67,6 +72,7 @@ export const Players = [
   nickname: "月島",
   spike: [],
   score: [],
+  serve: [],
 },
 {
   id: 7,
@@ -75,6 +81,7 @@ export const Players = [
   nickname: "西谷",
   spike: [],
   score: [],
+  serve: [],
 },
 {
   id: 8,
@@ -83,28 +90,29 @@ export const Players = [
   nickname: "れい",
   spike: [],
   score: [],
+  serve: [],
 },
 ];
 
 // チームデータ
 export const Opponents = [
 {
-  value: "001",
+  id: 1,
   name: "北海道教育大学",
   label: "教育大",
 },
 {
-  value: "002",
+  id: 2,
   name: "酒田東高校",
   label: "酒東",
 },
 {
-  value: "003",
+  id: 3,
   name: "山形第六中",
   label: "六中",
 },
 {
-  value: "004",
+  id: 4,
   name: "烏野高校",
   label: "烏野",
 },
@@ -115,7 +123,8 @@ export const Matches = [
 {
   matchId : 1,
   date : "2024-02-28",
-  opponentTeams : "001",
+  opponentId : 1,
+  result: "勝ったよ",
   sets : [
     {setId : 1, 
       actions: [
