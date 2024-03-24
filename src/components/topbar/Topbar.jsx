@@ -1,11 +1,13 @@
 import { Chat, Notifications, Search } from '@mui/icons-material'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import HomeIcon from '@mui/icons-material/Home';
 import React, { useState } from 'react'
 import "./Topbar.css"
 import Select from 'react-select';
 import { render } from '@testing-library/react';
 // import { Opponents } from '../../dummyData'
+import { Link } from 'react-router-dom';
 
 export default function Topbar({opponent, setOpponent}) {
 
@@ -21,7 +23,6 @@ export default function Topbar({opponent, setOpponent}) {
     const handleOpponentChange = (selectedOption) => {
         setOpponent(selectedOption.value)
     }
-    console.log(opponent)
 
   return (
     <div className='topbarContainer'>
@@ -58,8 +59,14 @@ export default function Topbar({opponent, setOpponent}) {
 
         <div className='topbarRight'>
             {/* <div className='topbarIconItem'> */}
+            <div className='toTop'>
+                <Link to="/" style={{textDecoration: 'none', color: 'white'}}>
+                    <HomeIcon />
+                    <span className='topIcon'>TOPへ</span>
+                </Link>
+            </div>
             <div className='forward'>
-                <span className='iconName'>次ページ</span>
+                <span className='forwardIcon'>次ページ</span>
                 <ArrowForwardIcon />
             </div>
         </div>

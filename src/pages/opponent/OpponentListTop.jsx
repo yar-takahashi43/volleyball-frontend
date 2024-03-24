@@ -2,6 +2,7 @@ import React from 'react'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import HomeIcon from '@mui/icons-material/Home';
 import "../home/Top.css"
+import { Link } from 'react-router-dom';
 
 export default function OpponentDetailsTop() {
     return (
@@ -17,8 +18,10 @@ export default function OpponentDetailsTop() {
             </div>
             <div className='topRight'>
                 <div className='topForward'>
-                    <HomeIcon />
-                    <span className='iconName'>TOPへ</span>
+                    <Link to="/" style={{textDecoration: 'none', color: 'white'}}>
+                        <HomeIcon />
+                        <span className='iconName'>TOPへ</span>
+                    </Link>
                 </div>
             </div>
         </div>

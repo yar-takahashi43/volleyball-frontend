@@ -15,8 +15,7 @@
     display: flex;
 }
 
-.topbarLeft,
-.topbarRight{
+.topbarLeft{
     flex: 2;
     display: flex;
     align-items: center;
@@ -28,14 +27,31 @@
     transition: all 0.3s;
 }
 
+.topbarRight{
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    cursor: pointer;
+}
+
+.toTop,
+.forward{
+    /* 以下menubarListの中身がホバーされたら凹む設定 */
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
 .topbarLeft:hover,
-.topbarRight:hover{
+.toTop:hover,
+.forward:hover{
     box-shadow: none;
     transform: translateY(5px);
 }
 
 .topbarCenter{
-    flex: 10;
+    flex: 9;
     display: flex;
     align-items: center;
     margin-left: 5%;
